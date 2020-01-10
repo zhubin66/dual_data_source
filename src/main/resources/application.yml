@@ -1,0 +1,44 @@
+spring:
+  datasource:
+    primary:
+      # mysql 连接配置
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/test?useUnicode=true&allowMultiQueries=true&characterEncoding=utf8&useSSL=false
+      username: root
+      password: 123456
+
+    secondary:
+      # mysql 连接配置
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/test1?useUnicode=true&allowMultiQueries=true&characterEncoding=utf8&useSSL=false
+      username: root
+      password: 123456
+
+  jpa:
+     database: mysql
+     hibernate:
+       ddl-auto: update # 反向生成
+       naming:
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy #jpa命名策略
+     show-sql: false # 显示sql
+     properties:
+      hibernate:
+       dialect: org.hibernate.dialect.MySQL5Dialect
+
+# 文件大小
+  http:
+    multipart:
+       max-file-size: 10Mb      # 单个文件不超过10M
+       max-request-size: 100Mb  # 请求文件总大小不超过100M
+
+#文件位置
+fileProps:
+  filePath: ./target/upload
+
+
+##################### Spring Boot WEB start #####################
+# Server HTTP port.
+server:
+  port: 9004 # 端口
+  tomcat:
+     uri-encoding: utf-8
