@@ -1,0 +1,204 @@
+{
+	"id": "7632b3b3-65f0-4c34-b49d-3972df7da7b2",
+	"name": "面试题测试",
+	"description": "",
+	"auth": null,
+	"events": null,
+	"variables": [],
+	"order": [],
+	"folders_order": [
+		"79f86b6d-a83f-47b2-a34e-cdad37525dff",
+		"92f5b833-ebbb-4b76-b569-f4c7931eaf71"
+	],
+	"folders": [
+		{
+			"id": "92f5b833-ebbb-4b76-b569-f4c7931eaf71",
+			"name": "学生管理",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"collection": "7632b3b3-65f0-4c34-b49d-3972df7da7b2",
+			"folder": null,
+			"order": [
+				"01eeecbb-a427-4410-9702-53de22347b4a",
+				"80036815-c8a7-483c-b19e-853d53a49f1f"
+			],
+			"folders_order": []
+		},
+		{
+			"id": "79f86b6d-a83f-47b2-a34e-cdad37525dff",
+			"name": "文件管理",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"collection": "7632b3b3-65f0-4c34-b49d-3972df7da7b2",
+			"folder": null,
+			"order": [
+				"1daf8766-9eea-43a1-b03a-0144fd96b1a6",
+				"cbdce3ea-9cfd-4a29-9bd4-3dd925dbacac",
+				"2639e36e-62eb-4565-8b0f-7b4a8b7dbfb4",
+				"ffdae6e7-0386-4341-b58c-00271144a376"
+			],
+			"folders_order": []
+		}
+	],
+	"requests": [
+		{
+			"id": "01eeecbb-a427-4410-9702-53de22347b4a",
+			"name": "新增学生信息",
+			"url": "{{baseuri9004}}/api/student",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"name": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"type": "text"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": null,
+			"folder": "92f5b833-ebbb-4b76-b569-f4c7931eaf71",
+			"rawModeData": "{\n\t\"name\":\"测试2\",\n\t\"age\":27\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "1daf8766-9eea-43a1-b03a-0144fd96b1a6",
+			"name": "文件上传",
+			"url": "{{baseuri9004}}/api/document/upload",
+			"description": "",
+			"data": [
+				{
+					"key": "file",
+					"value": "/D:/eleCloud/files/2019-03/20190327084136478_Tulips.jpg",
+					"description": "选择文件(File)",
+					"type": "file",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"name": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"type": "text"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": null,
+			"folder": "79f86b6d-a83f-47b2-a34e-cdad37525dff",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "2639e36e-62eb-4565-8b0f-7b4a8b7dbfb4",
+			"name": "获取文件管理列表",
+			"url": "{{baseuri9004}}/api/document?name&fileType",
+			"description": "",
+			"data": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "name",
+					"value": "",
+					"equals": false,
+					"description": "文件名",
+					"enabled": true
+				},
+				{
+					"key": "fileType",
+					"value": "",
+					"equals": false,
+					"description": "文件类型",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": null,
+			"folder": "79f86b6d-a83f-47b2-a34e-cdad37525dff",
+			"pathVariables": {}
+		},
+		{
+			"id": "80036815-c8a7-483c-b19e-853d53a49f1f",
+			"name": "查找一条学生信息",
+			"url": "{{baseuri9004}}/api/student/1",
+			"description": "",
+			"data": null,
+			"dataMode": null,
+			"headerData": [
+				{
+					"description": "",
+					"key": "Content-Type",
+					"name": "Content-Type",
+					"type": "text",
+					"value": "application/json"
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": null,
+			"folder": "92f5b833-ebbb-4b76-b569-f4c7931eaf71",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "cbdce3ea-9cfd-4a29-9bd4-3dd925dbacac",
+			"name": "文件下载",
+			"url": "{{baseuri9004}}/api/document/download/1",
+			"description": "",
+			"data": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": null,
+			"folder": "79f86b6d-a83f-47b2-a34e-cdad37525dff",
+			"pathVariables": {}
+		},
+		{
+			"id": "ffdae6e7-0386-4341-b58c-00271144a376",
+			"name": "删除文件(批量删除)",
+			"url": "{{baseuri9004}}/api/document",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"name": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"type": "text"
+				}
+			],
+			"method": "DELETE",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": null,
+			"folder": "79f86b6d-a83f-47b2-a34e-cdad37525dff",
+			"rawModeData": "[1]",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		}
+	]
+}
